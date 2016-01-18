@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle;
+namespace Jumaq\Bundle\OAuthClientBundle;
 
 
 final class PostRefreshSuccessEvents
@@ -12,5 +12,5 @@ final class PostRefreshSuccessEvents
 *
 * @var string
 */
-const OAUTH2_POST_REFRESH_SUCCESS = 'oxygem.oauth2.post_refresh.success';
+const OAUTH2_POST_REFRESH_SUCCESS = 'oauth2.post_refresh.success';
 }

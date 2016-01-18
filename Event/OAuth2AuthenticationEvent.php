@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle\Event;
+namespace Jumaq\Bundle\OAuthClientBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\Security\Core\SecurityContext;

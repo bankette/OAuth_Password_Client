@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle;
+namespace Jumaq\Bundle\OAuthClientBundle;
 
 
 final class PreRefreshEvents
@@ -12,5 +12,5 @@ final class PreRefreshEvents
 *
 * @var string
 */
-const OAUTH2_PRE_REFRESH = 'oxygem.oauth2.pre_refresh';
+const OAUTH2_PRE_REFRESH = 'oauth2.pre_refresh';
 }

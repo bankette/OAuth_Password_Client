@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle;
+namespace Jumaq\Bundle\OAuthClientBundle;
 
 
 final class PostAuthenticationFailureEvents
@@ -12,5 +12,5 @@ final class PostAuthenticationFailureEvents
 *
 * @var string
 */
-const OAUTH2_POST_AUTHENTICATION_FAILURE = 'oxygem.oauth2.post_authentication.failure';
+const OAUTH2_POST_AUTHENTICATION_FAILURE = 'oauth2.post_authentication.failure';
 }

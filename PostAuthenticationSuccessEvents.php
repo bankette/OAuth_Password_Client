@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle;
+namespace Jumaq\Bundle\OAuthClientBundle;
 
 
 final class PostAuthenticationSuccessEvents
@@ -12,5 +12,5 @@ final class PostAuthenticationSuccessEvents
 *
 * @var string
 */
-const OAUTH2_POST_AUTHENTICATION_SUCCESS = 'oxygem.oauth2.post_authentication.success';
+const OAUTH2_POST_AUTHENTICATION_SUCCESS = 'oauth2.post_authentication.success';
 }

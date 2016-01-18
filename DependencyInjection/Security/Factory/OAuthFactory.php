@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle\DependencyInjection\Security\Factory;
+namespace Jumaq\Bundle\OAuthClientBundle\DependencyInjection\Security\Factory;
 
 /**
  * Created by PhpStorm.
@@ -17,15 +17,15 @@ use Symfony\Bundle\SecurityBundle\DependencyInjection\Security\Factory\AbstractF
 class OAuthFactory extends AbstractFactory {
     public function create(ContainerBuilder $container, $id, $config, $userProvider, $defaultEntryPoint)
     {
-        $providerId = 'oxygem.oauth.security.authentication.provider.'.$id;
+        $providerId = 'oauth.security.authentication.provider.'.$id;
         $container
-            ->setDefinition($providerId, new DefinitionDecorator('oxygem.oauth.security.authentication.provider'))
+            ->setDefinition($providerId, new DefinitionDecorator('oauth.security.authentication.provider'))
             ->replaceArgument(0, new Reference($userProvider))
         ;
 
-        $listenerId = 'oxygem.oauth.security.authentication.listener.'.$id;
+        $listenerId = 'oauth.security.authentication.listener.'.$id;
         $container
-            ->setDefinition($listenerId, new DefinitionDecorator('oxygem.oauth.security.authentication.listener'))
+            ->setDefinition($listenerId, new DefinitionDecorator('oauth.security.authentication.listener'))
             ->replaceArgument(1, new Reference($providerId))
         ;
 
@@ -39,14 +39,14 @@ class OAuthFactory extends AbstractFactory {
 
     public function getKey()
     {
-        return 'dealfeedapi_oauth';
+        return 'remoteapi_oauth';
     }
 
     protected function createAuthProvider(ContainerBuilder $container, $id, $config, $userProviderId){
-        return "oxygem.oauth.security.authentication.provider";
+        return "oauth.security.authentication.provider";
     }
 
     protected function getListenerId(){
-        return "oxygem.oauth.security.authentication.listener";
+        return "oauth.security.authentication.listener";
     }
 }

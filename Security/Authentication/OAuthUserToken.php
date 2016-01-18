@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle\Security\Authentication;
+namespace Jumaq\Bundle\OAuthClientBundle\Security\Authentication;
 /**
  * Created by PhpStorm.
  * User: julienmaquet
@@ -292,7 +292,6 @@ class OAuthUserToken implements TokenInterface
                 $this->scope,
             )
         );
-//        var_dump("oxygem_serialize", $serialize);
         return $serialize;
     }
 

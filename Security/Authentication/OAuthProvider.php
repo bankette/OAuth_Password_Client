@@ -6,37 +6,37 @@
  * Time: 10:48
  */
 
-namespace Oxygem\Bundle\OAuthClientBundle\Security\Authentication;
+namespace Jumaq\Bundle\OAuthClientBundle\Security\Authentication;
 
 use Symfony\Component\Security\Core\Authentication\Provider\AuthenticationProviderInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
 class OAuthProvider implements AuthenticationProviderInterface {
-    protected $dealfeedApiUrl;
-    protected $dealfeedApiId;
-    protected $dealfeedApiSecret;
+    protected $remoteApiUrl;
+    protected $remoteApiId;
+    protected $remoteApiSecret;
     protected $userManager;
 
     public function __construct(
         $userManager,
-        $dealfeedApiUrl,
-        $dealfeedApiId,
-        $dealfeedApiSecret
+        $remoteApiUrl,
+        $remoteApiId,
+        $remoteApiSecret
     )
     {
         $this->userManager = $userManager;
-        $this->dealfeedApiUrl = $dealfeedApiUrl;
-        $this->dealfeedApiId = $dealfeedApiId;
-        $this->dealfeedApiSecret = $dealfeedApiSecret;
+        $this->remoteApiUrl = $remoteApiUrl;
+        $this->remoteApiId = $remoteApiId;
+        $this->remoteApiSecret = $remoteApiSecret;
     }
 
     public function authenticate(TokenInterface $token)
     {
         if(strlen($token->getOAuthToken())===0){
-            $url = $this->dealfeedApiUrl."/oauth/v2/token?"
-                ."client_id=".$this->dealfeedApiId
-                ."&client_secret=".$this->dealfeedApiSecret
+            $url = $this->remoteApiUrl."/oauth/v2/token?"
+                ."client_id=".$this->remoteApiId
+                ."&client_secret=".$this->remoteApiSecret
                 ."&grant_type=password"
                 ."&username=".$token->getUser()
                 ."&password=".$token->getPassword();
@@ -74,9 +74,9 @@ class OAuthProvider implements AuthenticationProviderInterface {
     {
         // BE CAREFUL !!! argument order is very important !
         // if you change the order of parameters, refresh will not work and the API will give a client credential error.
-        $url = $this->dealfeedApiUrl."/oauth/v2/token?"
-            ."client_secret=".$this->dealfeedApiSecret
-            ."&client_id=".$this->dealfeedApiId
+        $url = $this->remoteApiUrl."/oauth/v2/token?"
+            ."client_secret=".$this->remoteApiSecret
+            ."&client_id=".$this->remoteApiId
             ."&refresh_token=".$token->getRefreshToken()
             ."&grant_type=refresh_token";
 

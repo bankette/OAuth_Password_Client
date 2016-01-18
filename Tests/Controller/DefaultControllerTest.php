@@ -1,6 +1,6 @@
 <?php
 
-namespace Oxygem\Bundle\OAuthClientBundle\Tests\Controller;
+namespace Jumaq\Bundle\OAuthClientBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Oxygem\Bundle\OAuthClientBundle;
+namespace Jumaq\Bundle\OAuthClientBundle;
 
 
 final class PreAuthenticationEvents
@@ -12,5 +12,5 @@ final class PreAuthenticationEvents
 *
 * @var string
 */
-const OAUTH2_PRE_AUTHENTICATION = 'oxygem.oauth2.pre_authentication';
+const OAUTH2_PRE_AUTHENTICATION = 'oauth2.pre_authentication';
 }

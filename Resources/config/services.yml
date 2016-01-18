@@ -1,20 +1,20 @@
 services:
-    oxygem.oauth.security.authentication.listener:
-        class: Oxygem\Bundle\OAuthClientBundle\Security\Firewall\OAuthListener
+    oauth.security.authentication.listener:
+        class: Jumaq\Bundle\OAuthClientBundle\Security\Firewall\OAuthListener
         arguments:
             - @security.context
-            - "" #oxygem.oauth.security.authentication.provider, managed by the factory
+            - "" #oauth.security.authentication.provider, managed by the factory
             - @event_dispatcher
             - @session
         abstract: true
         public: false
 
-    oxygem.oauth.security.authentication.provider:
-        class: Oxygem\Bundle\OAuthClientBundle\Security\Authentication\OAuthProvider
+    oauth.security.authentication.provider:
+        class: Jumaq\Bundle\OAuthClientBundle\Security\Authentication\OAuthProvider
         arguments:
             - "" #User manager, managed by the factory
-            - "%apiradins%"
-            - "%dealfeed_api.id%"
-            - "%dealfeed_api.secret%"
+            - "%remote_api%"
+            - "%remote_api.id%"
+            - "%remote_api.secret%"
         public: false
 

@@ -6,25 +6,25 @@
  * Time: 10:32
  */
 
-namespace Oxygem\Bundle\OAuthClientBundle\Security\Firewall;
+namespace Jumaq\Bundle\OAuthClientBundle\Security\Firewall;
 
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
-use Oxygem\Bundle\OAuthClientBundle\Security\Authentication\OAuthUserToken;
+use Jumaq\Bundle\OAuthClientBundle\Security\Authentication\OAuthUserToken;
 use Symfony\Component\Security\Http\Firewall\ListenerInterface;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-use Oxygem\Bundle\OAuthClientBundle\Event\OAuth2AuthenticationEvent;
-use Oxygem\Bundle\OAuthClientBundle\PostAuthenticationFailureEvents;
-use Oxygem\Bundle\OAuthClientBundle\PostAuthenticationSuccessEvents;
-use Oxygem\Bundle\OAuthClientBundle\PreAuthenticationEvents;
-use Oxygem\Bundle\OAuthClientBundle\PreRefreshEvents;
-use Oxygem\Bundle\OAuthClientBundle\PostRefreshFailureEvents;
-use Oxygem\Bundle\OAuthClientBundle\PostRefreshSuccessEvents;
+use Jumaq\Bundle\OAuthClientBundle\Event\OAuth2AuthenticationEvent;
+use Jumaq\Bundle\OAuthClientBundle\PostAuthenticationFailureEvents;
+use Jumaq\Bundle\OAuthClientBundle\PostAuthenticationSuccessEvents;
+use Jumaq\Bundle\OAuthClientBundle\PreAuthenticationEvents;
+use Jumaq\Bundle\OAuthClientBundle\PreRefreshEvents;
+use Jumaq\Bundle\OAuthClientBundle\PostRefreshFailureEvents;
+use Jumaq\Bundle\OAuthClientBundle\PostRefreshSuccessEvents;
 
 class OAuthListener implements ListenerInterface
 {
