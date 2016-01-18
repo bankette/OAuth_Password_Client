@@ -1,0 +1,10 @@
+oxygem_oauth_client_login_check:
+    path:     /oxygem/login-check
+    defaults: { _controller: "OxygemOAuthClientBundle:Security:loginCheck" }
+    methods: POST
+
+oxygem_oauth_client_login_success:
+    path:     /oxygem/login-success
+    defaults: { _controller: "OxygemOAuthClientBundle:Security:loginSuccess" }
+    methods: GET
+

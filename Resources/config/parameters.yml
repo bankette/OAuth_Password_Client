@@ -1,0 +1,4 @@
+parameters:
+    oxygem_oauth_client.login_success_route: oxygem_oauth_client_login_success
+    oxygem_oauth_client.login_success_template: OxygemOAuthClientBundle:Security:login_success.html.twig
+    oxygem_oauth_client.login_route: fos_user_security_login

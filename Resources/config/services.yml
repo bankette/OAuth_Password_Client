@@ -1,0 +1,20 @@
+services:
+    oxygem.oauth.security.authentication.listener:
+        class: Oxygem\Bundle\OAuthClientBundle\Security\Firewall\OAuthListener
+        arguments:
+            - @security.context
+            - "" #oxygem.oauth.security.authentication.provider, managed by the factory
+            - @event_dispatcher
+            - @session
+        abstract: true
+        public: false
+
+    oxygem.oauth.security.authentication.provider:
+        class: Oxygem\Bundle\OAuthClientBundle\Security\Authentication\OAuthProvider
+        arguments:
+            - "" #User manager, managed by the factory
+            - "%apiradins%"
+            - "%dealfeed_api.id%"
+            - "%dealfeed_api.secret%"
+        public: false
+
